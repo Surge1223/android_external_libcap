@@ -9,8 +9,8 @@ libattr_src_files := \
 	syscalls.c
 
 
-libattr_cflag := \
-	-g -O2 -DDEBUG -funsigned-char \
+libattr_cflags := \
+	-g -O2 -funsigned-char \
 	-fno-strict-aliasing -Wall \
 	-DVERSION=\"2.4.47\" \
 	-DPACKAGE=\"attr\" \
@@ -34,10 +34,9 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_CLANG := true
-LOCAL_CFLAGS := $(libattr_cflags)
+LOCAL_CFLAGS := $(libattr_cflags) 
 LOCAL_SRC_FILES := $(libattr_src_files)
 LOCAL_MODULE := libattr_static
-
 LOCAL_C_INCLUDES := \
       	$(libattr_dir)/ \
      	$(LOCAL_PATH)/../include \
