@@ -1,0 +1,11 @@
+prefix=/data/toolchain/sysroot
+exec_prefix=
+libdir=/
+includedir=/data/toolchain/sysroot/include
+
+Name: libcap
+Description: libcap
+Version: 2.24
+Libs: -L${libdir} -lcap
+Libs.private: -lattr
+Cflags: -I${includedir}
